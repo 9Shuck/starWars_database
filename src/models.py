@@ -28,10 +28,10 @@ class Favorite(Base):
     user = relationship("User")
     planet_id = Column(Integer, ForeignKey('planet.id'))
     planet = relationship("Planet")
-    people_id = Column(Integer, ForeignKey('people.id'))
-    people = relationship("People")
-    starship_id = Column(Integer, ForeignKey('starship.id'))
-    starship = relationship("Starship")
+    vehicle_id = Column(Integer, ForeignKey('vehicles.id'))
+    vehicle = relationship("Vehicles")
+    specie_id = Column(Integer, ForeignKey('species.id'))
+    specie = relationship("Species")
 
 class Planet(Base):
     __tablename__ = 'planet'
@@ -52,7 +52,7 @@ class Planet(Base):
 
 
 class Vehicles(Base):
-    __tablename__ = 'people'
+    __tablename__ = 'vehicles'
     id = Column(Integer, primary_key=True)
     url=Column(String, nullable=False)
     name=Column(String, nullable=True)
@@ -73,7 +73,7 @@ class Vehicles(Base):
 
 
 class Species(Base):
-    __tablename__ = 'starship'
+    __tablename__ = 'species'
     id = Column(Integer, primary_key=True)
     url=Column(String, nullable=False)
     name=Column(String, nullable=False)
